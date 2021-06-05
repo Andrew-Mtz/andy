@@ -1,7 +1,7 @@
 var searchLoading = document.getElementById('search-loading');
 var searchMessage = document.getElementById('search-message');
 var searchMensajeError = document.getElementById('search-message-error');
-var searchMessage = document.getElementById('inicial-message');
+var inicialMessage = document.getElementById('inicial-message');
 var containerBtns = document.getElementById('container-btns');
 var divPeli = document.getElementById('img-pelicula');
 var namePeli = document.getElementById('pelicula-nombre');
@@ -28,7 +28,7 @@ let urlCheck = "http://localhost/progweb/Peliculas/peliculas/backend/endpoint/sh
 searchMovie = () => {
     searchMessage.style.display = 'none';
     if (idMovie == "") {
-        searchMensajeError.innerHTML = "Ingresa un nombre.";
+        searchMensajeError.innerHTML = "Ingrese un nombre.";
         searchMensajeError.style.display = 'block';
     } else {
         searchMensajeError.innerHTML = "";
@@ -50,7 +50,6 @@ searchMovie = () => {
                     namePeli.innerHTML = res.data.nombre;
                     divPeli.src = res.data.img;
                     divPeli.style.display = "block"
-                    idMovie = ""
                 }
                 console.log(res);
             })
@@ -97,8 +96,6 @@ addMovie = () => {
                     namePeli.innerHTML = nombre;
                     divPeli.src = img;
                     divPeli.style.display = "block"
-                    nombre = ""
-                    img = ""
                 }
                 console.log(res);
             })
@@ -154,16 +151,16 @@ let urlShowAll = "http://localhost/progweb/Peliculas/peliculas/backend/endpoint/
 showAllMovies = () => {
     axios.post(urlShowAll, {})
         .then(res => {
-            addMessage.style.display = 'block';
+            inicialMessage.style.display = 'block';
             if (res.data.message == "Peliculas is empty.") {
-                addMessage.innerHTML = "No hay peliculas aun, puede agregar una.";
+                inicialMessage.innerHTML = "No hay peliculas aun, puede agregar una.";
             } else {
-                addMessage.innerHTML = "Abajo estan todas las peliculas.";
+                inicialMessage.innerHTML = "Abajo estan todas las peliculas.";
             }
             console.log(res);
         })
         .catch(function (err) {
-            addMessage.innerText = 'Error de conexión ' + err;
+            inicialMessage.innerText = 'Error de conexión ' + err;
         })
         .then(function () {
             addLoading.style.display = 'none';
