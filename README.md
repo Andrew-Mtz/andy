@@ -10,13 +10,13 @@
 
 ## Pasos de instalación
 
-**1. Clonar el repositorio Git: https://github.com/KevinMP532/trabajo-prog.git**
+**1. Clonar el repositorio Git: https://github.com/Andrew-Mtz/Tarea-Peliculas.git**
 
 **2. Levantar el servidor apache y mySQL**
 
-**3. Importar la base de datos del directorio progweb/trabajo-prog/agenda_covid/database/agenda_covid.sql**
+**3. Importar la base de datos del directorio progweb/Peliculas/peliculas/database/Peliculas.sql**
 
-**4. Abrir en el navegador [home.html](http://localhost/progweb/trabajo-prog/agenda-covid/frontend/home/home.html)**
+**4. Abrir en el navegador [home.html](http://localhost/progweb/trabajo-prog/Peliculas/peliculas/frontend/showMovie/showMovie.html?pelicula=)**
 
 ## 
 
