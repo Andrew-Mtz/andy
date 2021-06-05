@@ -16,7 +16,7 @@
 
 **3. Importar la base de datos del directorio progweb/Peliculas/peliculas/database/Peliculas.sql**
 
-**4. Abrir en el navegador [home.html](http://localhost/progweb/trabajo-prog/Peliculas/peliculas/frontend/showMovie/showMovie.html?pelicula=)**
+**4. Abrir en el navegador [home.html](http://localhost/progweb/Peliculas/peliculas/frontend/showMovie/showMovie.html?pelicula=)**
 
 ## 
 
