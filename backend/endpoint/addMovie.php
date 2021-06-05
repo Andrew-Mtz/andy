@@ -48,10 +48,8 @@ if ($data->nombre == null) {
 
                 //Recipients
                 $mail->setFrom('pruebacorreophp3@gmail.com', 'Andrew, Lautaro, Natasha');
-                $mail->addAddress('andrew.martinez@anima.edu.uy', "Rodrigo Albano");     
+                $mail->addAddress('rodrigoalbano@anima.edu.uy', "Rodrigo Albano");     
 
-
-                
                 $mail->isHTML(true);                                  
                 $mail->Subject = 'Info pelicula';
                 $mail->Body    .=  "Pelicula: ";
@@ -59,7 +57,6 @@ if ($data->nombre == null) {
                 $mail->Body    .= " | ";
                 $mail->Body    .=  "Imagen: ";
                 $mail->Body    .=  $pelicula->img;
-
 
                 $mail->send();
                 http_response_code(200);
