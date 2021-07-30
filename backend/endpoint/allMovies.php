@@ -11,18 +11,18 @@ $database = new Database();
 $db = $database->getConnection();
 $Pelicula = new Pelicula($db);
 $Pelicula->allMovies();
+echo json_encode($Pelicula->allMovies());
+// if($Pelicula->idPelicula!='null'){
+//     $pelicula_arr[0] = array(
+//         "idPelicula" => $Pelicula->idPelicula,
+//         "nombre" => $Pelicula->nombre,
+//         "img" => $Pelicula->img,
+//     );
+//     http_response_code(200);
+//     echo json_encode($pelicula_arr);
+// }
   
-if($Pelicula->idPelicula!='null'){
-    $pelicula_arr = array(
-        "idPelicula" => $Pelicula->idPelicula,
-        "nombre" => $Pelicula->nombre,
-        "img" => $Pelicula->img,
-    );
-    http_response_code(200);
-    echo json_encode($pelicula_arr);
-}
-  
-else{
-    http_response_code(200);
-    echo json_encode(array("message" => "Peliculas is empty."));
-}
+// else{
+//     http_response_code(200);
+//     echo json_encode(array("message" => "Peliculas is empty."));
+// }

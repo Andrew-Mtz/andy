@@ -30,7 +30,7 @@ section{
 #img-pelicula{
     height: 475px;
     width: 300px; 
-    display: none;
+    display: block;
 }
 
 form, #container-btns{
@@ -255,7 +255,7 @@ body{
 }
 
 .navigation > ul > li >ul {
-    display: none;
+    display: block;
     
 }
 
@@ -445,7 +445,7 @@ font-size: 1.3rem;
 }
 
 #search-loading, #add-loading{
-    display: none;
+    display: block;
     font-size: 17px;
     margin: 0px auto;
     text-align: center;
@@ -473,7 +473,7 @@ font-size: 1.3rem;
 }
 
 #form-search, #form-add, #icon-plus, #icon-lupa, #icon-arrow {
-    display: none;
+    display: block;
 }
 
 .header-form{

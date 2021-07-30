@@ -94,7 +94,7 @@ class Pelicula
         $stmt->execute();
         $row = $stmt->fetchAll(PDO::FETCH_CLASS);
 
-        $this->idPelicula = $row['idPelicula'];
+        // $this->idPelicula = $row['idPelicula'];
         return $row;
     }
 
