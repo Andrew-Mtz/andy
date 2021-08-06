@@ -24,7 +24,7 @@ function AddPelicula() {
 
   const getPeliculas = async (nombre, img) => {
     try {
-        const response = await axios.post( 'http://localhost/progweb/andy/backend/endpoint/addMovie.php' , {
+        const response = await axios.post( 'http://localhost/dw/andy/backend/endpoint/addMovie.php' , {
           nombre: nombre,
           img: img
         })

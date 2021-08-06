@@ -24,7 +24,7 @@ function SearchPelicula() {
 
   const getPeliculas = async (idPelicula) => {
     try {
-        const response = await axios.post('http://localhost/progweb/andy/backend/endpoint/showMovie.php', {
+        const response = await axios.post('http://localhost/dw/andy/backend/endpoint/showMovie.php', {
           idPelicula: idPelicula
         })
         if (response.data.message === "Pelicula not found.") {

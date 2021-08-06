@@ -11,7 +11,7 @@ function ShowPelis() {
   useEffect(() => {
       const getPeliculas = async () => {
           try {
-              const response = await axios.post('http://localhost/progweb/andy/backend/endpoint/allMovies.php')
+              const response = await axios.post('http://localhost/dw/andy/backend/endpoint/allMovies.php')
               if (response.data.message === "Peliculas is empty.") {
                   setPeliculas("No se encontro ninguna pelicula");
               }else{
