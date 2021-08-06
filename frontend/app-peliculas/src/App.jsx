@@ -16,10 +16,10 @@ export default function App() {
       <div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/agregar">Agregar</Link>
           </li>
           <li>
-            <Link to="/agregar">Agregar</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/buscar">Buscar</Link>

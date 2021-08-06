@@ -30,16 +30,18 @@ function ShowPelis() {
   
   return (
     <div>
-        {peliculas.map((pelicula) => (
-          <div className="container-info">
-              <div className="container-nombre">
-                  <p id="pelicula-nombre">{pelicula.nombre}</p>
-              </div>
-              <div className="container-pelicula">
-                  <img alt={pelicula.nombre} id="img-pelicula" src={pelicula.img}/>
-              </div>
-          </div>
-        ))};
+      <div className="container-pelis">
+          {peliculas.map((pelicula) => (
+            <div className="container-peli">
+                <div className="container-nombre">
+                    <p id="pelicula-nombre">{pelicula.nombre}</p>
+                </div>
+                <div className="container-img">
+                    <img alt={pelicula.nombre} id="img-pelicula" src={pelicula.img}/>
+                </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

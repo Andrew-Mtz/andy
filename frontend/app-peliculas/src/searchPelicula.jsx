@@ -63,14 +63,14 @@ function SearchPelicula() {
         </div>
         <p id="message">{message}</p>
         <p id="add-loading">{loading}</p>
-        <button id="btn-verificar" className="btn-form" onClick={handleOnClick}>Buscar</button>
+        <button className="btn-form" onClick={handleOnClick}>Buscar</button>
       </form>
       <div>
-          <div className="container-info">
+          <div className="container-peli">
               <div className="container-nombre">
                   <p id="pelicula-nombre">{pelicula.nombre}</p>
               </div>
-              <div className="container-pelicula">
+              <div className="container-img">
                   <img alt={pelicula.nombre} id="img-pelicula" src={pelicula.img} />
               </div>
           </div>
