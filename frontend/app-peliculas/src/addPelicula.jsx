@@ -16,6 +16,7 @@ function AddPelicula() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState('');
+  const [showPeli, setShowPeli] = useState('none');
 
   const handleOnChange = event => {
     const { name, value } = event.target;
@@ -29,10 +30,13 @@ function AddPelicula() {
           img: img
         })
         if (response.data.message === "Movie already exists.") {
-            setMessage("Esta pelicula ya existe.");
+          setMessage("Esta pelicula ya existe.");
+          setLoading("");
+          setShowPeli("none");
         } else if (response.data.message === "Could not add movie." ) {
           setMessage("No se pudo agregar la pelicula.");
           setLoading("");
+          setShowPeli("none");
         } else {
           setMessage("Pelicula agregada correctamente.");
           setLoading("");
@@ -41,12 +45,14 @@ function AddPelicula() {
               nombre: nombre,
               img: img
             }));
+          setShowPeli("block");
         };
         console.log(nombre, img)
       } catch (err) {
         console.error('fallo axios', err);
         setError('Hubo un error al traer las peliculas');
         setLoading("");
+        setShowPeli("none");
       }
     };
 
@@ -64,13 +70,13 @@ function AddPelicula() {
           <label id="lbl-nombre" htmlFor="nombre">Agregue la pelicula que desea</label>
           <input id="input-nombre" type="text" name="nombre" onChange={handleOnChange} value={inputValues.nombre} />
           <label id="lbl-img" htmlFor="img">Agregue una url para la imagen</label>
-          <input id="input-img" type="text" name="img" onChange={handleOnChange} value={inputValues.img} />
+          <input id="input-img" type="text" name="img" onChange={handleOnChange} value={inputValues.img}   />
         </div>
         <p id="message">{message}</p>
         <p id="add-loading">{loading}</p>
         <button className="btn-form" onClick={handleOnClick}>Agregar</button>
       </form>
-      <div>
+      <div style={{ display: showPeli }}>
           <div className="container-peli">
               <div className="container-nombre">
                   <p id="pelicula-nombre">{pelicula.nombre}</p>

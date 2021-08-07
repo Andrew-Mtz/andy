@@ -16,6 +16,7 @@ function SearchPelicula() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState('');
+  const [showPeli, setShowPeli] = useState('none');
 
   const handleOnChange = event => {
     const { name, value } = event.target;
@@ -30,6 +31,7 @@ function SearchPelicula() {
         if (response.data.message === "Pelicula not found.") {
           setMessage("Pelicula no encontrada.");
           setLoading("");
+          setShowPeli("none");
         } else {
           setMessage('Resultados de la busqueda "' + idPelicula + '"');
           setPelicula(prevState => ({
@@ -39,11 +41,13 @@ function SearchPelicula() {
             img: response.data.img
           }));
           setLoading("");
+          setShowPeli("block");
         };
       } catch (err) {
         console.error('fallo axios', err);
         setError('Hubo un error al traer las peliculas');
         setLoading("");
+        setShowPeli("none");
       }
     };
 
@@ -51,6 +55,7 @@ function SearchPelicula() {
     event.preventDefault();
     setLoading("Cargando...");
     getPeliculas(inputValues.idPelicula);
+    setInputValues({ idPelicula: '' });
   }
   
   return (
@@ -65,7 +70,7 @@ function SearchPelicula() {
         <p id="add-loading">{loading}</p>
         <button className="btn-form" onClick={handleOnClick}>Buscar</button>
       </form>
-      <div>
+      <div style={{ display: showPeli }}>
           <div className="container-peli">
               <div className="container-nombre">
                   <p id="pelicula-nombre">{pelicula.nombre}</p>
